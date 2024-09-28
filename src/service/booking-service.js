@@ -24,10 +24,11 @@ try {
         throw new ServiceError("something went wrong in booking process,'insufficent seats")
     }
     console.log(priceOfTheFlight)
-    console.log(Data.noOfseats)
-    const totalcost = priceOfTheFlight*Data.noOfseats
-    console.log(totalcost)
-    const bookingPayload = { ... Data, totalcost}
+    console.log("priceOfTheFlight",priceOfTheFlight)
+    console.log("Data.noOfseat", Data.noOfSeats)
+    const totalCost = priceOfTheFlight*Data.noOfSeats
+    console.log("total cost",totalCost)
+    const bookingPayload = { ... Data, totalCost}
     console.log("booking pay load ",bookingPayload)
     const booking = await this.BookingRepository.create(bookingPayload)
     console.log("bookig is",booking)
